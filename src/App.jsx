@@ -1,7 +1,8 @@
 import {data} from "./data/data"
 import { useState} from 'react'
 import './App.css'
-import ImcTable from "./components/imcTable";
+import ImcCalc from "../src/components/ImcCalc.jsx";
+import ImcTable from "../src/components/ImcTable.jsx";
 
 function App() {
   const calcImc = (e,height,weight) => {
@@ -34,7 +35,7 @@ function App() {
   return (
     <div className="container">
       {!imc ? (
-        <h1>teste</h1>
+        <ImcCalc calcImc ={calcImc}/>
       ): (
         <ImcTable data={data} imc={imc} info={info} infoClass={infoClass} resetCalc={resetCalc}/>
       )}
